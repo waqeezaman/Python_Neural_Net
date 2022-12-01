@@ -10,3 +10,6 @@ class ActivationLayer(Layer):
     
     def BackPropogate(self, error_output_deriv, lr):
         return self.Activation_Deriv(error_output_deriv)
+
+##def RELU():
+    

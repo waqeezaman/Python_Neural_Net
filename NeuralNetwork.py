@@ -1,11 +1,11 @@
 import numpy as np
 class NeuralNetwork:
 
-    def __init__(self,layers,lr):
+    def __init__(self,layers,lr,random_state=np.random.RandomState(seed=np.random.randint(0,9999999))):
         self.LearningRate=lr
         self.Layers=layers
         self.CumulativeError=0
-    
+        self.Random_State=random_state
     def Query(self,inputs):
        return self.FeedForward(inputs)
 

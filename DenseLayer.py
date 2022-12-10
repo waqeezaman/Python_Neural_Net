@@ -3,11 +3,13 @@ import numpy as np
 
 class DenseLayer(Layer):
     
-    def __init__(self,inputsize,outputsize):
+    def __init__(self,inputsize,outputsize,random_state=np.random.RandomState(seed=np.random.randint(0,999999999))):
         super().__init__()
         ## initialise weights and biases randomly
-        self.Weights=np.random.randn(outputsize,inputsize)
-        self.Bias=np.random.randn(outputsize,1)
+        self.Weights=random_state.randn(outputsize,inputsize)
+        ##self.Weights=np.multiply(self.Weights,self.Weights)
+        self.Bias=random_state.randn(outputsize,1)
+        ##self.Bias=np.multiply(self.Bias,self.Bias)
 
     def FeedForward(self,inputs):
         self.Inputs=inputs

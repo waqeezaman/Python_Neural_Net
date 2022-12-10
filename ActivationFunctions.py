@@ -1,7 +1,10 @@
 import numpy as np
 def RELU(x):
         if x<0 :
+            print("negative value")
+
             return 0.01*x
+
         else:
             return x
 
